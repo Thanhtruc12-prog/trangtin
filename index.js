@@ -10,7 +10,11 @@ var chudeRouter = require('./routers/chude');
 var taikhoanRouter = require('./routers/taikhoan');
 var baivietRouter = require('./routers/baiviet');
 
-var uri = 'mongodb://admin:admin123@ac-g09tuxm-shard-00-02.gfldesw.mongodb.net:27017/trangtin?ssl=true&authSource=admin';
+
+
+
+
+var uri = 'mongodb+srv://admin:admin123@cluster0.gfldesw.mongodb.net/trangtin?appName=Cluster0';
 mongoose.connect(uri).catch(err => console.log(err));
 
 app.set('views', './views');
@@ -55,6 +59,6 @@ app.use('/chude', chudeRouter);
 app.use('/taikhoan', taikhoanRouter);
 app.use('/baiviet', baivietRouter);
 
-app.listen(3000, () => {
-	console.log('Server is running at http://127.0.0.1:3000');
+app.listen(process.env.PORT || 3000, () => {
+    console.log('Server is running...');
 });
