@@ -14,7 +14,7 @@ var baivietRouter = require('./routers/baiviet');
 
 
 
-var uri = 'mongodb+srv://admin:admin123@cluster0.gfldesw.mongodb.net/trangtin?appName=Cluster0';
+var uri = 'mongodb://admin:admin123@ac-g09tuxm-shard-00-02.gfldesw.mongodb.net:27017/trangtin?ssl=true&authSource=admin';
 mongoose.connect(uri).catch(err => console.log(err));
 
 app.set('views', './views');
